@@ -48,7 +48,7 @@ def add(x, y):
 
 
 print(add(2, 3))
-print(add('str1', 'str2'))                 
+print(add('str1', 'str2'))       
 ```
 </td> 
 <td> 
@@ -179,7 +179,8 @@ object main1 extends App {
 Результат запуску mypy:
 
 ```
-error: Argument 1 to "make_sound" has incompatible type "Dog"; expected "Animal"
+error: Argument 1 to "make_sound" has incompatible type "Dog"; 
+expected "Animal"
 ```
 </td>
 <td>
@@ -244,7 +245,7 @@ def make_sound(animal: Animal):
 
 
 make_sound(Dog())
-make_sound(Cat())                                                    
+make_sound(Cat())                                       
 ```
 </td> 
 <td> 
