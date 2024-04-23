@@ -634,7 +634,7 @@ class Animal(ABC):
         return 'Eat default'
 
 
-class Dog(Animal):
+class Dog:
     category = 'pet'
 
     def sound(self) -> str:
