@@ -164,7 +164,7 @@ object main1 extends App {
   }
 
 
-  private def makeSound(animal: Animal): Unit = {
+  def makeSound(animal: Animal): Unit = {
     animal.sound()
   }
 
