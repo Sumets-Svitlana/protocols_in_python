@@ -1,16 +1,15 @@
-# from third_party_library import Dog
-from typing import Protocol, runtime_checkable
+from abc import ABC, abstractmethod
 
 
-@runtime_checkable
-class Animal(Protocol):
+class Animal(ABC):
     category: str
 
+    @abstractmethod
     def sound(self) -> str:
         pass
 
     def eat(self, food: str) -> str:
-        pass
+        return 'Eat default'
 
 
 class Dog(Animal):
@@ -20,7 +19,7 @@ class Dog(Animal):
         return f'Dog with category {self.category} sound like Woof woof!'
 
     def eat(self, food: str) -> str:
-        return f'Dog with cat {self.category} eat {food}'
+        return f'Dog with category {self.category} eat {food}'
 
 
 def make_sound(animal: Animal):
@@ -29,4 +28,3 @@ def make_sound(animal: Animal):
 
 print(make_sound(Dog()))
 print(isinstance(Dog(), Animal))
-
