@@ -6,7 +6,7 @@ class Animal(ABC):
 
     @abstractmethod
     def sound(self) -> str:
-        pass
+        ...
 
     def eat(self, food: str) -> str:
         return 'Eat default'

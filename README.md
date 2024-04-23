@@ -120,7 +120,7 @@ from abc import ABC, abstractmethod
 class Animal(ABC):
     @abstractmethod
     def sound(self):
-        print('...')
+        ...
 
 
 class Cat(Animal):
@@ -334,11 +334,11 @@ from abc import ABC, abstractmethod
 class Animal(ABC):
     @abstractmethod
     def sound(self):
-        print('...')
+        ...
 
     @abstractmethod
     def eat(self):
-        print('...')
+        ...
 # ...
 ```
 
@@ -416,10 +416,10 @@ class Animal(Protocol):
     category: str
 
     def sound(self) -> str:
-        pass
+        ...
 
     def eat(self, food: str) -> str:
-        pass
+        ...
 
 
 class Dog:
@@ -482,7 +482,7 @@ from typing import Protocol, runtime_checkable
 @runtime_checkable
 class Animal(Protocol):
     def sound(self):
-        pass
+        ...
 
 
 class Dog:
@@ -503,7 +503,7 @@ from typing import Protocol, runtime_checkable
 @runtime_checkable
 class HasLength(Protocol):
     def __len__(self) -> int:
-        pass
+        ...
 
 
 print(isinstance('Duck', HasLength))
@@ -587,10 +587,10 @@ class Animal(Protocol):
     category: str
 
     def sound(self) -> str:
-        pass
+        ...
 
     def eat(self, food: str) -> str:
-        pass
+        ...
 
 
 class Dog:
@@ -628,7 +628,7 @@ class Animal(ABC):
 
     @abstractmethod
     def sound(self) -> str:
-        pass
+        ...
 
     def eat(self, food: str) -> str:
         return 'Eat default'
@@ -705,10 +705,10 @@ class Animal(Protocol):
     category: str
 
     def sound(self) -> str:
-        pass
+        ...
 
     def eat(self, food: str) -> str:
-        pass
+        ...
 
 
 def make_sound(animal: Animal):

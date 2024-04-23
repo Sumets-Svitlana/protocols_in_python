@@ -7,10 +7,10 @@ class Animal(Protocol):
     category: str
 
     def sound(self) -> str:
-        pass
+        ...
 
     def eat(self, food: str) -> str:
-        pass
+        ...
 
 
 class Dog(Animal):
