@@ -190,7 +190,7 @@ incompatible type "Dog"; expected "Animal"
 type mismatch;
  found   : main1.Dog
  required: main1.Animal
-  makeSound(new Dog())                                                          
+  makeSound(new Dog())
 ```
 </td>
 </tr>
