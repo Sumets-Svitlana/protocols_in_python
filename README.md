@@ -179,8 +179,8 @@ object main1 extends App {
 Результат запуску mypy:
 
 ```
-error: Argument 1 to "make_sound" has incompatible type "Dog"; 
-expected "Animal"
+error: Argument 1 to "make_sound" has 
+incompatible type "Dog"; expected "Animal"
 ```
 </td>
 <td>
@@ -245,7 +245,7 @@ def make_sound(animal: Animal):
 
 
 make_sound(Dog())
-make_sound(Cat())                                       
+make_sound(Cat())              
 ```
 </td> 
 <td> 
@@ -290,7 +290,8 @@ object main2 extends App {
 Помилка при виконанні програми:
 
 ```
-class type required but AnyRef{def sound(): Unit; def eat(): Unit} found
+class type required but 
+AnyRef{def sound(): Unit; def eat(): Unit} found
   class Cat extends Animal{
 ```
 </td>
@@ -597,10 +598,16 @@ class Dog:
     category = 'pet'
 
     def sound(self) -> str:
-        return f'Dog with category {self.category} sound like Woof woof!'
+        return (
+            f'Dog with category {self.category} '
+            f'sound like Woof woof!'
+        )
 
     def eat(self, food: str) -> str:
-        return f'Dog with cat {self.category} eat {food}'
+        return (
+            f'Dog with category {self.category} '
+            f'eat {food}'
+        )
 
 
 def make_sound(animal: Animal):
@@ -632,10 +639,16 @@ class Dog(Animal):
     category = 'pet'
 
     def sound(self) -> str:
-        return f'Dog with category {self.category} sound like Woof woof!'
+        return (
+            f'Dog with category {self.category} '
+            f'sound like Woof woof!'
+        )
 
     def eat(self, food: str) -> str:
-        return f'Dog with cat {self.category} eat {food}'
+        return (
+            f'Dog with category {self.category} '
+            f'eat {food}'
+        )
 
 
 def make_sound(animal: Animal):

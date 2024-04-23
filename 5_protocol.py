@@ -20,7 +20,7 @@ class Dog(Animal):
         return f'Dog with category {self.category} sound like Woof woof!'
 
     def eat(self, food: str) -> str:
-        return f'Dog with cat {self.category} eat {food}'
+        return f'Dog with category {self.category} eat {food}'
 
 
 def make_sound(animal: Animal):
