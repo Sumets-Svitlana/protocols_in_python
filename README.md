@@ -53,7 +53,7 @@ print(add('str1', 'str2'))
 </td> 
 <td> 
 
-```
+```scala
 object main extends App {
   def add(x: Int, y: Int): Int = {
     x + y
