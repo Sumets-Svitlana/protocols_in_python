@@ -290,8 +290,7 @@ object main2 extends App {
 Помилка при виконанні програми:
 
 ```
-class type required but AnyRef
-{def sound(): Unit; def eat(): Unit} found
+class type required but AnyRef{def sound(): Unit; def eat(): Unit} found
   class Cat extends Animal{
 ```
 </td>
