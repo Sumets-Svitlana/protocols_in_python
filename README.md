@@ -13,14 +13,14 @@
 За тим, як типи перевіряються під час виконання програми, розрізняють статичну та динамічну типізацію.
 За тим, як типи визначаються і порівнюються між собою, розрізняють номінальну та структурну типізацію.
 
-![typing_classification](pictures/typing_classification.png)
+![typing_classification](https://github.com/Sumets-Svitlana/protocols_in_python/assets/82828126/9f650a9f-94e2-4d43-b3aa-ff33d9b58db3)
 
 #### Статична та динамічна типізації
 
 Python є мовою з динамічною типізацією, що означає, що типи даних визначаються автоматично при присвоєнні значень 
 змінним, навідміну від статичної типізації, де типи даних визначаються в явному порядку під час компіляції програми.
 
-![static_and_dynamic_typing](pictures/static_and_dynamic_typing.png)
+![static_and_dynamic_typing](https://github.com/Sumets-Svitlana/protocols_in_python/assets/82828126/42527dd9-e286-4949-86d8-2bbf2e4c73f5)
 
 Щоб продемонстувати це та порівняти Python з іншими мовами програмування, давайте подивимось на реальний приклад:
 маємо один і той самий код двома мовами - Python та Scala. Scala обрана просто як приклад мови зі статичною типізацією.
@@ -80,7 +80,7 @@ object main extends App {
 
 Ні номінальної, ні структурної типізації немає у Python, але ми їх розглянемо, згодом стане зрозуміло чому.
 
-![nominal_and_structural_typing](pictures/nominal_and_structural_typing.png)
+![nominal_and_structural_typing](https://github.com/Sumets-Svitlana/protocols_in_python/assets/82828126/1fbf5759-5a68-4a36-a5e2-f00881641d99)
 
 Почнемо з номінальної. Якщо простими словами, у випадку номінальної типізації типи збігаються, якщо вони мають 
 однакові імена, навіть якщо їх структури відрізняються. Це напряму пов’язано з використанням ієрархії класів.
@@ -143,7 +143,7 @@ make_sound(Dog())
 </td> 
 <td> 
 
-```
+```scala
 object main1 extends App {
   abstract class Animal {
     def sound(): Unit
@@ -250,7 +250,7 @@ make_sound(Cat())
 </td> 
 <td> 
 
-```
+```scala
 object main2 extends App {
   private type Animal = {
     def sound(): Unit
@@ -309,7 +309,7 @@ class type required but AnyRef
 як качка, і крякає, як качка, то це, ймовірно, і є качка". Але постає питання, що значить “виглядати”, “плавати” 
 та "крякати" та що в реалії є цією качкою?
 
-![duck_typing_rule](pictures/duck_typing_rule.png)
+![duck_typing_rule](https://github.com/Sumets-Svitlana/protocols_in_python/assets/82828126/574f15fb-5b82-46f0-b9cd-28a374d5dbc9)
 
 Качина типізація - це концепція, згідно з якою конкретний тип об'єкта (качки) не є важливим, а важливі лише властивості 
 і методи, якими цей об'єкт володіє. Як це було з `Cat` та `Dog`: головне, щоб був метод `sound()`, все інше - не важливо. 
@@ -317,7 +317,7 @@ class type required but AnyRef
 і можуть бути об'єктами різних класів. Єдина умова - щоб усі ці об'єкти підтримували необхідний набір властивостей 
 і методів (як наприклад, метод `sound()`).
 
-![duck_typing](pictures/duck_typing.png)
+![duck_typing](https://github.com/Sumets-Svitlana/protocols_in_python/assets/82828126/46932409-8587-48d3-bbc8-32e179929d32)
 
 Але така гнучкість часто дає багато мінусів, бо ніхто не знає, що там прийшло, аби крякало. Якщо не крякає, це ваші 
 проблеми, треба було перевіряти тестами. 
@@ -356,7 +356,7 @@ class Animal(ABC):
 ітерацію, будуть реалізовувати методи `__iter__()` і `__next__()`. Однак є також зручний вбудований тип даних, який 
 автоматично реалізує цей протокол - це ітеровані об'єкти, такі як списки, кортежі, строки і словники.
 
-![iterator_protocol](pictures/iterator_protocol.png)
+![iterator_protocol](https://github.com/Sumets-Svitlana/protocols_in_python/assets/82828126/c0683b73-fe49-4c84-850e-3ca4dcabf556)
 
 Подивимось приклад. Бачимо реалізацію ітератора для проходження по числам Фібоначчі. У випадку ітератора протокол визначає 
 методи `__iter__()` та `__next__()`. Клас, що реалізує ці методи, вважається ітератором. Він може бути використаний у 
@@ -393,7 +393,7 @@ for number in fib_sequence:
 методи і за необхідності організовують перевірку наявності всього цього у відповідних класах. Механізм протоколів 
 з’явився в версії Python 3.8, і він є способом реалізації структурної типізації в Python.
 
-![protocol](pictures/protocol.png)
+![protocol](https://github.com/Sumets-Svitlana/protocols_in_python/assets/82828126/8383783d-3dd3-46c1-864b-f823f0fa4dfe)
 
 #### Протоколи
 
@@ -402,7 +402,7 @@ for number in fib_sequence:
 перелічені в тілі класу-протоколу, мають бути реалізовані у всіх класах, що відповідають цьому протоколу. У загальному 
 випадку тіло методів класу-протоколу не має значення (хоча й існує можливість додати реалізацію методів за замовчуванням).
 
-![custom_protocol](pictures/custom_protocol.png)
+![custom_protocol](https://github.com/Sumets-Svitlana/protocols_in_python/assets/82828126/1ce07927-1978-4c48-8355-e842b497d30c)
 
 Повертаємося до наших котів та собак. Маємо клас протоколу, що спадкується від `Protocol` з модуля `typing`, реалізації 
 методів протоколу зазвичай немає. Маємо клас `Dog`, що реалізовує всі атрибути та методи класу протокола. І у функції 
@@ -470,7 +470,7 @@ note:         def eat(self) -> str
 об'єкт певного класу, ми можемо перевірити, чи можна розглядати його, як екземпляр певного протоколу безпосередньо під 
 час виконання програми.
 
-![runtime_checkable](pictures/runtime_checkable.png)
+![runtime_checkable](https://github.com/Sumets-Svitlana/protocols_in_python/assets/82828126/980380c9-273c-437d-82c8-01f5def3d291)
 
 Подивимося приклад. Маємо клас протоколу та клас, що реалізовує цей протокол. Без використання декоратору 
 `@runtime_checkable` ми побачимо помилку виконання коду, декоратор додає можливість для перевірок відповідностей типів 
@@ -525,7 +525,7 @@ print(isinstance([1, 2, 3], HasLength))
 то успадкування від звичайного класу може призвести до появи певних станів, що суперечить фундаментальній концепції 
 протоколів.
 
-![protocol_hierarchy](pictures/protocol_hierarchy.png)
+![protocol_hierarchy](https://github.com/Sumets-Svitlana/protocols_in_python/assets/82828126/8b4f380d-a60a-4c46-b8d3-8c6587a9f823)
 
 ### Абстрактні базові класи
 
@@ -537,7 +537,7 @@ print(isinstance([1, 2, 3], HasLength))
 забезпечити сумісність цього інтерфейсу, даючи змогу визначати абстрактні методи, які обов’язково мають бути реалізовані 
 підкласами.
 
-![abstract_class](pictures/abstract_class.png)
+![abstract_class](https://github.com/Sumets-Svitlana/protocols_in_python/assets/82828126/6c9e18a8-4555-4a27-b864-48e645ae8c07)
 
 #### Переваги абстрактних базових класів
 
@@ -549,7 +549,7 @@ print(isinstance([1, 2, 3], HasLength))
 По-друге, абстрактні класи вимагають явного успадкування, що робить їх більш придатними для проектування інтерфейсів з 
 нуля або для ситуацій, коли ви маєте контроль над ієрархією класів.
 
-![advantages_of_abstract_classes](pictures/advantages_of_abstract_classes.png)
+![advantages_of_abstract_classes](https://github.com/Sumets-Svitlana/protocols_in_python/assets/82828126/a64a4b65-6dd2-48c1-a95e-ee149b641255)
 
 #### Переваги протоколів
 
@@ -566,7 +566,7 @@ print(isinstance([1, 2, 3], HasLength))
 класів, які не перебувають під вашим контролем. Ця можливість особливо цінна в ситуаціях, коли зміна наявних класів 
 або їхньої ієрархії успадкування неможлива.
 
-![advantages_of_protocols](pictures/advantages_of_protocols.png)
+![advantages_of_protocols](https://github.com/Sumets-Svitlana/protocols_in_python/assets/82828126/0c5151aa-0601-4401-ab88-0282ea5b22ec)
 
 Давайте тепер все це подивимося на прикладі, щоб точно зрозуміти. 
 Будемо розглядати приклад з ієрархією класів з абстрактним базовим класом у ролі батьківського та приклад з протоколом.
@@ -737,4 +737,5 @@ print(make_sound(Dog()))
 коду. Це робить протоколи цінним інструментом у сценаріях, де зміна наявних класів або їхньої ієрархії успадкування 
 неможлива або небажана. Абстрактні класи програють у даному випадку, вони можуть працювати лише з підконтрольним кодом.
 
-![conclusions](pictures/conclusions.png)
+![conclusions](https://github.com/Sumets-Svitlana/protocols_in_python/assets/82828126/e74ff215-92c5-49e3-acaf-b5acd9287446)
+
